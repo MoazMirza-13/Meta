@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className=" py-5 md:fixed static md:top-0 md:left-0 md:right-0 z-50 bg-black ">
+      <nav className=" py-5 fixed top-0 left-0 right-0 z-50 bg-black ">
         <div className="text-white flex  m-auto justify-between w-[80%] lg:w-[80%] md:w-[85%] ">
           {/* logo */}
           <div className="flex gap-2 cursor-pointer items-center ">
@@ -62,7 +62,7 @@ export default function Navbar() {
             className={`md:gap-12 md:static md:pt-0 flex flex-col w-full  md:w-auto gap-6  md:items-start text-center  md:h-0 h-screen   bg-black absolute  left-0 pt-6 
           ${
             Open
-              ? "top-20 visibility-visible"
+              ? "top-16 visibility-visible"
               : "top-[-790px] visibility-hidden"
           }`}
           >
