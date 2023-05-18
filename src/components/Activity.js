@@ -1,7 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 import slider1 from "../../src/sliderImgs/sI1.png";
 import slider2 from "../../src/sliderImgs/sI2.png";
 import slider3 from "../../src/sliderImgs/sI3.png";
@@ -11,20 +9,22 @@ import { motion as m } from "framer-motion";
 
 export default function Activity() {
   const settings = {
-    // dots: true,
-    // infinite: true,
-    // speed: 500,
-    // slidesToShow: 1,
-    // slidesToScroll: 1,
-    // fade: true,
-    dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2300,
-    pauseOnHover: true,
+    autoplaySpeed: 2500,
+    speed: 2000,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
   };
+
   return (
     <div className="text-white w-[85%] m-auto flex flex-col  md:mt-32 mt-24 lg:mt-36 xl:mt-44 gap-8">
       <div className="flex flex-col gap-4 items-center">
