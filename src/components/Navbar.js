@@ -2,10 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { motion as m } from "framer-motion";
 import { Link } from "react-scroll";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { HiMenuAlt3, HiX, HiArrowCircleUp } from "react-icons/hi";
 import { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
+import ScrollUpButton from "react-scroll-up";
 export default function Navbar() {
+  // nav li items
   const navLi = [
     { id: "home", title: "Home", offset: -90 },
     { id: "resources", title: "Resources", offset: -140 },
@@ -13,6 +15,7 @@ export default function Navbar() {
     { id: "activities", title: "Activities", offset: -80 },
     { id: "about", title: "About" },
   ];
+  // menu
   const [Open, setOpen] = useState(false);
   const isSmallScreen = useMediaQuery({ maxWidth: 500 });
   useEffect(() => {
@@ -135,6 +138,12 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+      {/* scroll to top */}
+      <ScrollUpButton showUnder={160} duration={1500} easing="easeInOutQuint">
+        <div className="fixed right-[0.5rem] md:right-[2rem] lg:hidden bottom-[4rem] text-3xl text-white">
+          <HiArrowCircleUp />
+        </div>
+      </ScrollUpButton>
     </>
   );
 }
