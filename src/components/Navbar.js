@@ -66,7 +66,8 @@ export default function Navbar() {
               : "top-[-790px] visibility-hidden"
           }`}
           >
-            <ul className="font-pop_1 lg:gap-8 xl:gap-12 md:gap-6 md:flex-row flex flex-col gap-5 ">
+            {/* ul for large screens */}
+            <ul className="font-pop_1 lg:gap-8 xl:gap-12 md:gap-6 md:flex-row md:flex flex-col hidden gap-5 ">
               {navLi.map(({ id, title, offset }) => (
                 <li
                   className="text-xl md:text-lg lg:text-xl cursor-pointer"
@@ -75,7 +76,28 @@ export default function Navbar() {
                   <Link
                     to={id}
                     smooth={true}
+                    delay={200}
                     duration={800}
+                    offset={offset}
+                    onClick={isSmallScreen ? () => setOpen(!Open) : undefined}
+                  >
+                    {title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            {/* ul for mobile devices */}
+            <ul className="font-pop_1 lg:gap-8 xl:gap-12 md:gap-6 md:flex-row flex flex-col md:hidden gap-5 ">
+              {navLi.map(({ id, title, offset }) => (
+                <li
+                  className="text-xl md:text-lg lg:text-xl cursor-pointer"
+                  key={id}
+                >
+                  <Link
+                    to={id}
+                    smooth={true}
+                    delay={200}
+                    duration={1700}
                     offset={offset}
                     onClick={isSmallScreen ? () => setOpen(!Open) : undefined}
                   >
