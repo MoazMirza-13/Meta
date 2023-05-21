@@ -3,8 +3,6 @@ import { useState } from "react";
 import { motion as m } from "framer-motion";
 import { Link } from "react-scroll";
 import { HiMenuAlt3, HiX, HiArrowCircleUp } from "react-icons/hi";
-import { useEffect } from "react";
-import { useMediaQuery } from "react-responsive";
 import ScrollUpButton from "react-scroll-up";
 export default function Navbar() {
   // nav li items
@@ -17,14 +15,6 @@ export default function Navbar() {
   ];
   // menu
   const [Open, setOpen] = useState(false);
-  const isSmallScreen = useMediaQuery({ maxWidth: 500 });
-  useEffect(() => {
-    document.body.style.overflow = Open && isSmallScreen ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [Open, isSmallScreen]);
-
   return (
     <>
       <nav className=" py-5 fixed top-0 left-0 right-0 z-50 bg-black ">
@@ -62,10 +52,10 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ dealy: 0.0, duration: 0.7 }}
-            className={`md:gap-12 md:static md:pt-0 flex flex-col w-full  md:w-auto gap-6  md:items-start text-center  md:h-0 h-screen   bg-black absolute  left-0 pt-6 
+            className={`md:gap-12 md:static  flex flex-col w-full  md:w-auto gap-8  md:items-start text-center  md:h-0 h-screen   bg-black absolute  left-0 
           ${
             Open
-              ? "top-16 visibility-visible"
+              ? "top-12 visibility-visible justify-center"
               : "top-[-790px] visibility-hidden"
           }`}
           >
@@ -82,7 +72,6 @@ export default function Navbar() {
                     delay={200}
                     duration={800}
                     offset={offset}
-                    onClick={isSmallScreen ? () => setOpen(!Open) : undefined}
                   >
                     {title}
                   </Link>
@@ -93,7 +82,7 @@ export default function Navbar() {
             <ul className="font-pop_1 lg:gap-8 xl:gap-12 md:gap-6 md:flex-row flex flex-col md:hidden gap-5 ">
               {navLi.map(({ id, title, offset }) => (
                 <li
-                  className="text-xl md:text-lg lg:text-xl cursor-pointer"
+                  className="text-2xl md:text-lg lg:text-xl cursor-pointer"
                   key={id}
                 >
                   <Link
@@ -102,7 +91,7 @@ export default function Navbar() {
                     delay={200}
                     duration={1700}
                     offset={offset}
-                    onClick={isSmallScreen ? () => setOpen(!Open) : undefined}
+                    onClick={() => setOpen(!Open)}
                   >
                     {title}
                   </Link>
