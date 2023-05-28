@@ -129,7 +129,7 @@ export default function Navbar() {
       </nav>
       {/* scroll to top */}
       <ScrollUpButton showUnder={160} duration={1800} easing="easeInOutQuint">
-        <div className="fixed right-[0.5rem] md:right-[2rem] lg:hidden bottom-[4rem] text-3xl text-white">
+        <div className="fixed right-[0.5rem] md:right-[2rem] lg:text-4xl bottom-[4rem] text-3xl text-white">
           <HiArrowCircleUp />
         </div>
       </ScrollUpButton>
