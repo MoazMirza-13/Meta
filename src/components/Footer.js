@@ -79,7 +79,7 @@ export default function Footer() {
             </li>
           </ul>
           <p className="font-pop_6 text-sm md:text-xl ">
-            2022 © Meta.com All right reserved.
+            2023 © Meta.com All right reserved.
           </p>
         </m.div>
       </div>
